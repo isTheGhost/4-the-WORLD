@@ -1,0 +1,38 @@
+<html>
+<head>
+    <title>Barra de Navegación</title>
+</head>
+<body>
+    <input type="text" id="searchInput" placeholder="navegacion...">
+    <button id="searchButton">navegacion</button>
+    <div id="searchResults"></div>
+
+    <script>
+        // Obtén referencias a los elementos HTML
+        const searchInput = document.getElementById('searchInput');
+        const searchButton = document.getElementById('searchButton');
+        const searchResults = document.getElementById('searchResults');
+
+        // Función para realizar la búsqueda con nuestra barra
+        function navegacion() {
+            const query = searchInput.value;
+
+            // Ejemplo de resultado de búsqueda
+            const resultado = `Resultados de búsqueda para: ${query}`;
+
+            // Muestra los resultados en el elemento de resultados
+            searchResults.textContent = resultado;
+        }
+
+        // Agregar un controlador de eventos al botón de búsqueda
+        searchButton.addEventListener('click', navegacion);
+
+        // También puedes hacer que la búsqueda se realice al presionar Enter en el campo de entrada
+        searchInput.addEventListener('keyup', function(event) {
+            if (event.key === 'Enter') {
+                navegacion();
+            }
+        });
+    </script>
+</body>
+</html>
